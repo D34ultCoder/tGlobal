@@ -8,6 +8,7 @@ interface PatientCardProps {
   patient: Patient;
   isExpanded: boolean;
   onToggle: () => void;
+  onConsultationNotesPress: () => void;
 }
 
 if (Platform.OS === 'android') {
@@ -16,7 +17,7 @@ if (Platform.OS === 'android') {
   }
 }
 
-export function PatientCard({ patient, isExpanded, onToggle }: PatientCardProps) {
+export function PatientCard({ patient, isExpanded, onToggle, onConsultationNotesPress }: PatientCardProps) {
   const handleToggle = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     onToggle();
@@ -106,7 +107,7 @@ export function PatientCard({ patient, isExpanded, onToggle }: PatientCardProps)
               title="Consultation Notes"
               variant="primary"
               className="flex-1 ml-2"
-              onPress={() => { }}
+              onPress={onConsultationNotesPress}
             />
           </View>
         </View>

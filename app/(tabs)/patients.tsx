@@ -8,11 +8,15 @@ import { TabFilter } from '@/components/ui/TabFilter';
 import { PatientCard } from '@/components/PatientCard';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { ConsultationNotesModal } from '@/components/ConsultationNotesModal';
+import { Patient } from '@/types/patient';
 
 export default function PatientsScreen() {
   const [activeFilter, setActiveFilter] = useState<PatientFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedPatientId, setExpandedPatientId] = useState<string | null>(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
 
   const filteredPatients = PATIENTS.filter((patient) => {
     const matchesSearch = patient.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -22,6 +26,11 @@ export default function PatientsScreen() {
 
   const togglePatientExpansion = (patientId: string) => {
     setExpandedPatientId(expandedPatientId === patientId ? null : patientId);
+  };
+
+  const handleConsultationNotesPress = (patient: Patient) => {
+    setSelectedPatient(patient);
+    setModalVisible(true);
   };
 
   const filterTabs = [
@@ -66,6 +75,7 @@ export default function PatientsScreen() {
               patient={patient}
               isExpanded={expandedPatientId === patient.id}
               onToggle={() => togglePatientExpansion(patient.id)}
+              onConsultationNotesPress={() => handleConsultationNotesPress(patient)}
             />
           ))
         ) : (
@@ -80,6 +90,13 @@ export default function PatientsScreen() {
           />
         )}
       </ScrollView>
+
+      {/* Consultation Notes Modal */}
+      <ConsultationNotesModal
+        visible={modalVisible}
+        patient={selectedPatient}
+        onClose={() => setModalVisible(false)}
+      />
     </SafeAreaView>
   );
 }

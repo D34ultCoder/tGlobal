@@ -12,6 +12,20 @@ export const PATIENTS: Patient[] = [
     email: 'smith.johnny@gmail.com',
     lastAppointment: '26-11-2024',
     upcomingAppointment: '31-11-2024',
+    consultationNotes: [
+      {
+        id: '1-1',
+        title: 'Getting better',
+        description: 'Patient reports improved glucose control. A1C decreased from 7.2 to 6.8. Maintaining current medication regimen. Encouraged continued dietary compliance and regular exercise.',
+        date: '26-11-2024',
+      },
+      {
+        id: '1-2',
+        title: 'Getting better',
+        description: 'Patient reports improved glucose control. A1C decreased from 7.2 to 6.8. Maintaining current medication regimen. Encouraged continued dietary compliance and regular exercise.',
+        date: '26-5-2024',
+      },
+    ],
   },
   {
     id: '2',
@@ -24,6 +38,14 @@ export const PATIENTS: Patient[] = [
     email: 'leslie.alex@gmail.com',
     lastAppointment: '25-11-2024',
     upcomingAppointment: '30-11-2024',
+    consultationNotes: [
+      {
+        id: '2-1',
+        title: 'Follow-up visit',
+        description: 'Patient showing positive response to new treatment plan. Blood pressure readings have stabilized. Continue current medications and schedule follow-up in 3 months.',
+        date: '25-11-2024',
+      },
+    ],
   },
   {
     id: '3',
@@ -36,6 +58,14 @@ export const PATIENTS: Patient[] = [
     email: 'savannah.n@gmail.com',
     lastAppointment: '24-11-2024',
     upcomingAppointment: '29-11-2024',
+    consultationNotes: [
+      {
+        id: '3-1',
+        title: 'Initial consultation',
+        description: 'New patient intake completed. Discussed medical history and current symptoms. Ordered baseline lab work and scheduled follow-up appointment.',
+        date: '24-11-2024',
+      },
+    ],
   },
   {
     id: '4',
@@ -48,6 +78,14 @@ export const PATIENTS: Patient[] = [
     email: 'kathryn.m@gmail.com',
     lastAppointment: '23-11-2024',
     upcomingAppointment: '28-11-2024',
+    consultationNotes: [
+      {
+        id: '4-1',
+        title: 'Routine checkup',
+        description: 'Annual physical examination completed. All vitals within normal range. Recommended lifestyle modifications and scheduled next annual visit.',
+        date: '23-11-2024',
+      },
+    ],
   },
   {
     id: '5',
@@ -60,5 +98,13 @@ export const PATIENTS: Patient[] = [
     email: 'theresa.webb@gmail.com',
     lastAppointment: '22-11-2024',
     upcomingAppointment: '27-11-2024',
+    consultationNotes: [
+      {
+        id: '5-1',
+        title: 'Medication review',
+        description: 'Reviewed current medication list. Adjusted dosage for hypertension medication. Patient reports no adverse effects. Continue monitoring at home.',
+        date: '22-11-2024',
+      },
+    ],
   },
 ];

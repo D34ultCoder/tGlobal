@@ -108,6 +108,7 @@ export function PatientCard({ patient, isExpanded, onToggle, onConsultationNotes
               variant="primary"
               className="flex-1 ml-2"
               onPress={onConsultationNotesPress}
+              disabled={!patient.consultationNotes || patient.consultationNotes.length === 0}
             />
           </View>
         </View>

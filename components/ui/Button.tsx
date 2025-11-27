@@ -25,9 +25,11 @@ export function Button({
     ? "text-white"
     : "text-primary";
 
+  const disabledStyle = props.disabled ? "opacity-50" : "";
+
   return (
     <TouchableOpacity
-      className={`${baseStyle} ${variantStyle} ${className}`}
+      className={`${baseStyle} ${variantStyle} ${disabledStyle} ${className}`}
       {...props}
     >
       <Text className={`${baseTextStyle} ${variantTextStyle} ${textClassName}`}>

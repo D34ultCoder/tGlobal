@@ -3,6 +3,7 @@ export interface ConsultationNote {
   title: string;
   description: string;
   date: string;
+  patientId: string;
 }
 
 export interface Patient {

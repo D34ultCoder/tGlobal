@@ -9,7 +9,6 @@ export default function ScheduleScreen() {
     <SafeAreaView className="flex-1 bg-white">
       <PageHeader title="Schedule" />
 
-      {/* Content */}
       <ScrollView className="flex-1 px-5 py-6">
         <View className="items-center justify-center py-20">
           <Ionicons name="calendar-outline" size={64} color="#00BFA6" />
